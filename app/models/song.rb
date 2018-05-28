@@ -5,10 +5,11 @@ class Song < ApplicationRecord
 
 	validates :name, uniqueness: true
 
-	validate :anti_bob_validator, on: :create
+	validate :no_songs_named_bob_validator
 
-	def anti_bob_validator
-		self.name != "Bob"
+	def no_songs_named_bob_validator
+		if self.name.downcase == "bob"
+			self.errors.add(:name, "No Bob songs allowed!")
+		end
 	end
-
 end

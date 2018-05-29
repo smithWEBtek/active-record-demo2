@@ -1,0 +1,13 @@
+<h1>Songs</h1>
+<table>
+  <th class="col-large">
+    <h3><tr align="left">
+      <td>Name</td>
+    </tr></h3>
+  </th>
+<% @songs.each do |song| %>
+  <tr>
+    <td><%= link_to song.name, song_path(song) %></td>
+  </tr>
+<% end %>
+</table>

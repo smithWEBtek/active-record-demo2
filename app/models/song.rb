@@ -3,13 +3,13 @@ class Song < ApplicationRecord
 	has_many :song_genres
 	has_many :genres, through: :song_genres
 
-	validates :name, uniqueness: true
+	# validates :name, uniqueness: true
 
-	validate :no_songs_named_bob_validator
+	# validate :no_songs_named_bob_validator
 
-	def no_songs_named_bob_validator
-		if self.name.downcase == "bob"
-			self.errors.add(:name, "No Bob songs allowed!")
-		end
-	end
+	# def no_songs_named_bob_validator
+	# 	if self.name.downcase == "bob"
+	# 		self.errors.add(:name, "No Bob songs allowed!")
+	# 	end
+	# end
 end

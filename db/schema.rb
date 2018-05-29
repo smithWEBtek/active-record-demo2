@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180528143539) do
+ActiveRecord::Schema.define(version: 20180417001035) do
 
   create_table "artists", force: :cascade do |t|
     t.string "name"
-    t.string "hometown"
+    t.string "town"
   end
 
   create_table "genres", force: :cascade do |t|
@@ -29,12 +29,6 @@ ActiveRecord::Schema.define(version: 20180528143539) do
   create_table "songs", force: :cascade do |t|
     t.integer "artist_id"
     t.string "name"
-  end
-
-  create_table "venues", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
 end

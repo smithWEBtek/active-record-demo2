@@ -1,0 +1,13 @@
+<h1>Artist</h1>
+<p>
+	name: <%= @artist.name %>
+</p>
+<p>
+	songs: <% @artist.songs.each do |song| %>
+		<%= song.name %>
+		<% end %>
+		</p>
+
+<h2>Route prefixes: </h2>
+	<%= song_url(1) %>
+	<%= song_path(1) %>

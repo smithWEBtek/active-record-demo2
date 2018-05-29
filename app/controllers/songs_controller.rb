@@ -2,10 +2,14 @@ class SongsController < ApplicationController
 	before_action :set_song, only: [:show, :edit, :update, :destroy]
 
 	def index
-		@songs = Song.all 
+		if params[:artist_id]
+			@songs = Artist.find(params[:artist_id]).songs
+		else
+			@songs = Song.all 
 		 respond_to do |format|
 			format.html { render :index }
 			format.json { render json: @songs }
+			end
 		end
 	end
 
